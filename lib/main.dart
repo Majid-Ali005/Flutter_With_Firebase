@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+// ...
+
+
+Future<void> main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
+
+  }
+  
+  class DefaultFirebaseOptions {
+  static var currentPlatform;
+  }
+  
+  class Firebase {
+  static initializeApp({required options}) {}
+  }
+                 
+  runApp(MyApp()) {
+    // TODO: implement runApp
+    throw UnimplementedError();
+  }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
